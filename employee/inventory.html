@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Inventory Management - PharmaCare Employee Portal</title>
+        <link rel="stylesheet" href="../css/styles.css" />
+        <link rel="stylesheet" href="css/employee-styles.css" />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <h1>PharmaCare</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="#" id="logoutBtn">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="dashboard">
+            <aside class="sidebar">
+                <ul class="sidebar-menu">
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="products.html">Product Management</a></li>
+                    <li><a href="suppliers.html">Supplier Management</a></li>
+                    <li>
+                        <a href="inventory.html" class="active"
+                            >Inventory Management</a
+                        >
+                    </li>
+                    <li><a href="sales.html">Sales Tracking</a></li>
+                </ul>
+            </aside>
+
+            <div class="main-content">
+                <div class="page-header">
+                    <h2>Inventory Management</h2>
+                    <p>Monitor stock levels and low inventory</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Products</h3>
+                        <div class="stat-value">248</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Low Stock Items</h3>
+                        <div class="stat-value">12</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Out of Stock</h3>
+                        <div class="stat-value">3</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Expiring Soon</h3>
+                        <div class="stat-value">8</div>
+                    </div>
+                </div>
+
+                <div class="toolbar">
+                    <div class="search-box">
+                        <input
+                            type="text"
+                            placeholder="Search inventory..."
+                            id="searchInventory"
+                        />
+                    </div>
+                    <div class="filter-options">
+                        <select id="inventoryFilter">
+                            <option value="all">All Items</option>
+                            <option value="low">Low Stock</option>
+                            <option value="out">Out of Stock</option>
+                            <option value="expiring">Expiring Soon</option>
+                        </select>
+                    </div>
+                </div>
+
+                <table class="data-table" id="inventoryTable">
+                    <thead>
+                        <tr>
+                            <th>Product ID</th>
+                            <th>Product Name</th>
+                            <th>Category</th>
+                            <th>Current Stock</th>
+                            <th>Min. Stock</th>
+                            <th>Expiry Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>P001</td>
+                            <td>Pain Relief Tablets</td>
+                            <td>Over-the-Counter</td>
+                            <td>145</td>
+                            <td>50</td>
+                            <td>2025-06-15</td>
+                            <td><span class="status-normal">Normal</span></td>
+                            <td>
+                                <button class="action-btn edit-btn">
+                                    Update Stock
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>P002</td>
+                            <td>Antibiotics</td>
+                            <td>Prescription Medicines</td>
+                            <td>78</td>
+                            <td>50</td>
+                            <td>2025-03-10</td>
+                            <td><span class="status-normal">Normal</span></td>
+                            <td>
+                                <button class="action-btn edit-btn">
+                                    Update Stock
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="low-stock">
+                            <td>P003</td>
+                            <td>Vitamin C Supplements</td>
+                            <td>Wellness & Vitamins</td>
+                            <td>25</td>
+                            <td>30</td>
+                            <td>2025-08-22</td>
+                            <td>
+                                <span class="status-warning">Low Stock</span>
+                            </td>
+                            <td>
+                                <button class="action-btn edit-btn">
+                                    Update Stock
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="low-stock">
+                            <td>P004</td>
+                            <td>First Aid Kit</td>
+                            <td>Healthcare Products</td>
+                            <td>15</td>
+                            <td>20</td>
+                            <td>2026-01-30</td>
+                            <td>
+                                <span class="status-warning">Low Stock</span>
+                            </td>
+                            <td>
+                                <button class="action-btn edit-btn">
+                                    Update Stock
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="out-of-stock">
+                            <td>P005</td>
+                            <td>Allergy Relief Tablets</td>
+                            <td>Over-the-Counter</td>
+                            <td>0</td>
+                            <td>25</td>
+                            <td>2025-04-18</td>
+                            <td>
+                                <span class="status-danger">Out of Stock</span>
+                            </td>
+                            <td>
+                                <button class="action-btn edit-btn">
+                                    Update Stock
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="expiring-soon">
+                            <td>P006</td>
+                            <td>Cold & Flu Syrup</td>
+                            <td>Over-the-Counter</td>
+                            <td>42</td>
+                            <td>30</td>
+                            <td>2024-06-05</td>
+                            <td>
+                                <span class="status-warning"
+                                    >Expiring Soon</span
+                                >
+                            </td>
+                            <td>
+                                <button class="action-btn edit-btn">
+                                    Update Stock
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Stock Update Modal (hidden by default) -->
+                <div id="stockModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <h3>Update Stock</h3>
+                        <form id="stockForm" class="form-container">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="productId">Product ID</label>
+                                    <input
+                                        type="text"
+                                        id="productId"
+                                        name="productId"
+                                        readonly
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label for="productName"
+                                        >Product Name</label
+                                    >
+                                    <input
+                                        type="text"
+                                        id="productName"
+                                        name="productName"
+                                        readonly
+                                    />
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="currentStock"
+                                        >Current Stock</label
+                                    >
+                                    <input
+                                        type="number"
+                                        id="currentStock"
+                                        name="currentStock"
+                                        readonly
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label for="stockChange"
+                                        >Add/Remove Stock</label
+                                    >
+                                    <input
+                                        type="number"
+                                        id="stockChange"
+                                        name="stockChange"
+                                        required
+                                    />
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="reason">Reason</label>
+                                    <select id="reason" name="reason" required>
+                                        <option value="">Select Reason</option>
+                                        <option value="restock">Restock</option>
+                                        <option value="adjustment">
+                                            Inventory Adjustment
+                                        </option>
+                                        <option value="damaged">
+                                            Damaged/Expired
+                                        </option>
+                                        <option value="return">
+                                            Customer Return
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="expiryDate"
+                                        >Expiry Date (if restocking)</label
+                                    >
+                                    <input
+                                        type="date"
+                                        id="expiryDate"
+                                        name="expiryDate"
+                                    />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="notes">Notes</label>
+                                <textarea
+                                    id="notes"
+                                    name="notes"
+                                    rows="3"
+                                ></textarea>
+                            </div>
+                            <div class="form-actions">
+                                <button
+                                    type="button"
+                                    class="action-btn cancel-btn"
+                                    id="cancelStockBtn"
+                                >
+                                    Cancel
+                                </button>
+                                <button
+                                    type="submit"
+                                    class="action-btn save-btn"
+                                >
+                                    Update Stock
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Your trusted pharmacy for all healthcare needs</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../products.html">Products</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>Email: info@pharmacare.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PharmaCare. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="js/inventory.js"></script>
+    </body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Product Management - PharmaCare Employee Portal</title>
+        <link rel="stylesheet" href="../css/styles.css" />
+        <link rel="stylesheet" href="css/employee-styles.css" />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <h1>PharmaCare</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="#" id="logoutBtn">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="dashboard">
+            <aside class="sidebar">
+                <ul class="sidebar-menu">
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li>
+                        <a href="products.html" class="active"
+                            >Product Management</a
+                        >
+                    </li>
+                    <li><a href="suppliers.html">Supplier Management</a></li>
+                    <li><a href="inventory.html">Inventory Management</a></li>
+                    <li><a href="sales.html">Sales Tracking</a></li>
+                </ul>
+            </aside>
+
+            <div class="main-content">
+                <div class="page-header">
+                    <h2>Product Management</h2>
+                    <p>Add, update, and delete pharmacy products</p>
+                </div>
+
+                <div class="toolbar">
+                    <div class="search-box">
+                        <input
+                            type="text"
+                            placeholder="Search products..."
+                            id="searchProducts"
+                        />
+                    </div>
+                    <button class="add-new-btn" id="addProductBtn">
+                        Add New Product
+                    </button>
+                </div>
+
+                <table class="data-table" id="productsTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Product Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>P001</td>
+                            <td>Pain Relief Tablets</td>
+                            <td>Over-the-Counter</td>
+                            <td>$12.99</td>
+                            <td>145</td>
+                            <td>
+                                <button class="action-btn edit-btn">
+                                    Edit
+                                </button>
+                                <button class="action-btn delete-btn">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>P002</td>
+                            <td>Antibiotics</td>
+                            <td>Prescription Medicines</td>
+                            <td>$25.99</td>
+                            <td>78</td>
+                            <td>
+                                <button class="action-btn edit-btn">
+                                    Edit
+                                </button>
+                                <button class="action-btn delete-btn">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>P003</td>
+                            <td>Vitamin C Supplements</td>
+                            <td>Wellness & Vitamins</td>
+                            <td>$15.99</td>
+                            <td>210</td>
+                            <td>
+                                <button class="action-btn edit-btn">
+                                    Edit
+                                </button>
+                                <button class="action-btn delete-btn">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>P004</td>
+                            <td>First Aid Kit</td>
+                            <td>Healthcare Products</td>
+                            <td>$29.99</td>
+                            <td>35</td>
+                            <td>
+                                <button class="action-btn edit-btn">
+                                    Edit
+                                </button>
+                                <button class="action-btn delete-btn">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>P005</td>
+                            <td>Allergy Relief Tablets</td>
+                            <td>Over-the-Counter</td>
+                            <td>$18.50</td>
+                            <td>92</td>
+                            <td>
+                                <button class="action-btn edit-btn">
+                                    Edit
+                                </button>
+                                <button class="action-btn delete-btn">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Product Form Modal (hidden by default) -->
+                <div id="productModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <h3 id="modalTitle">Add New Product</h3>
+                        <form id="productForm" class="form-container">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="productId">Product ID</label>
+                                    <input
+                                        type="text"
+                                        id="productId"
+                                        name="productId"
+                                        required
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label for="productName"
+                                        >Product Name</label
+                                    >
+                                    <input
+                                        type="text"
+                                        id="productName"
+                                        name="productName"
+                                        required
+                                    />
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="productCategory"
+                                        >Category</label
+                                    >
+                                    <select
+                                        id="productCategory"
+                                        name="productCategory"
+                                        required
+                                    >
+                                        <option value="">
+                                            Select Category
+                                        </option>
+                                        <option value="prescription">
+                                            Prescription Medicines
+                                        </option>
+                                        <option value="otc">
+                                            Over-the-Counter
+                                        </option>
+                                        <option value="healthcare">
+                                            Healthcare Products
+                                        </option>
+                                        <option value="wellness">
+                                            Wellness & Vitamins
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="productPrice">Price ($)</label>
+                                    <input
+                                        type="number"
+                                        id="productPrice"
+                                        name="productPrice"
+                                        step="0.01"
+                                        min="0"
+                                        required
+                                    />
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="productStock"
+                                        >Stock Quantity</label
+                                    >
+                                    <input
+                                        type="number"
+                                        id="productStock"
+                                        name="productStock"
+                                        min="0"
+                                        required
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label for="productSupplier"
+                                        >Supplier</label
+                                    >
+                                    <select
+                                        id="productSupplier"
+                                        name="productSupplier"
+                                    >
+                                        <option value="">
+                                            Select Supplier
+                                        </option>
+                                        <option value="1">
+                                            MediSupply Inc.
+                                        </option>
+                                        <option value="2">
+                                            HealthCare Distributors
+                                        </option>
+                                        <option value="3">
+                                            Pharma Wholesale Ltd.
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="productDescription"
+                                    >Description</label
+                                >
+                                <textarea
+                                    id="productDescription"
+                                    name="productDescription"
+                                    rows="3"
+                                ></textarea>
+                            </div>
+                            <div class="form-actions">
+                                <button
+                                    type="button"
+                                    class="action-btn cancel-btn"
+                                    id="cancelProductBtn"
+                                >
+                                    Cancel
+                                </button>
+                                <button
+                                    type="submit"
+                                    class="action-btn save-btn"
+                                >
+                                    Save Product
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Your trusted pharmacy for all healthcare needs</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../products.html">Products</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>Email: info@pharmacare.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PharmaCare. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="js/products.js"></script>
+    </body>
+</html>

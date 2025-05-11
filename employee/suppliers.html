@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Supplier Management - PharmaCare Employee Portal</title>
+        <link rel="stylesheet" href="../css/styles.css" />
+        <link rel="stylesheet" href="css/employee-styles.css" />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <h1>PharmaCare</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="#" id="logoutBtn">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="dashboard">
+            <aside class="sidebar">
+                <ul class="sidebar-menu">
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="products.html">Product Management</a></li>
+                    <li>
+                        <a href="suppliers.html" class="active"
+                            >Supplier Management</a
+                        >
+                    </li>
+                    <li><a href="inventory.html">Inventory Management</a></li>
+                    <li><a href="sales.html">Sales Tracking</a></li>
+                </ul>
+            </aside>
+
+            <div class="main-content">
+                <div class="page-header">
+                    <h2>Supplier Management</h2>
+                    <p>Manage supplier information and track purchases</p>
+                </div>
+
+                <div class="toolbar">
+                    <div class="search-box">
+                        <input
+                            type="text"
+                            placeholder="Search suppliers..."
+                            id="searchSuppliers"
+                        />
+                    </div>
+                    <button class="add-new-btn" id="addSupplierBtn">
+                        Add New Supplier
+                    </button>
+                </div>
+
+                <table class="data-table" id="suppliersTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Supplier Name</th>
+                            <th>Contact Person</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>S001</td>
+                            <td>MediSupply Inc.</td>
+                            <td>Kamal Hossam</td>
+                            <td>(555) 234-5678</td>
+                            <td>jwilliams@medisupply.com</td>
+                            <td>
+                                <button class="action-btn edit-btn">
+                                    Edit
+                                </button>
+                                <button class="action-btn delete-btn">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>S002</td>
+                            <td>HealthCare Distributors</td>
+                            <td>Ziad Ahmed</td>
+                            <td>(555) 345-6789</td>
+                            <td>sjohnson@hcdist.com</td>
+                            <td>
+                                <button class="action-btn edit-btn">
+                                    Edit
+                                </button>
+                                <button class="action-btn delete-btn">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>S003</td>
+                            <td>Pharma Wholesale Ltd.</td>
+                            <td>Adham Mohamed</td>
+                            <td>(555) 456-7890</td>
+                            <td>mbrown@pharmawholesale.com</td>
+                            <td>
+                                <button class="action-btn edit-btn">
+                                    Edit
+                                </button>
+                                <button class="action-btn delete-btn">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="supplier-purchases">
+                    <h3>Recent Purchases</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Supplier</th>
+                                <th>Products</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2024-04-28</td>
+                                <td>MediSupply Inc.</td>
+                                <td>Pain Relief Tablets (100 units)</td>
+                                <td>$850.00</td>
+                                <td>Delivered</td>
+                            </tr>
+                            <tr>
+                                <td>2024-04-25</td>
+                                <td>HealthCare Distributors</td>
+                                <td>Antibiotics (50 units)</td>
+                                <td>$1,250.00</td>
+                                <td>Delivered</td>
+                            </tr>
+                            <tr>
+                                <td>2024-04-20</td>
+                                <td>Pharma Wholesale Ltd.</td>
+                                <td>Vitamin C Supplements (200 units)</td>
+                                <td>$1,800.00</td>
+                                <td>Delivered</td>
+                            </tr>
+                            <tr>
+                                <td>2024-05-01</td>
+                                <td>MediSupply Inc.</td>
+                                <td>First Aid Kits (30 units)</td>
+                                <td>$750.00</td>
+                                <td>Processing</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Supplier Form Modal (hidden by default) -->
+                <div id="supplierModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <h3 id="modalTitle">Add New Supplier</h3>
+                        <form id="supplierForm" class="form-container">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="supplierId">Supplier ID</label>
+                                    <input
+                                        type="text"
+                                        id="supplierId"
+                                        name="supplierId"
+                                        required
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label for="supplierName"
+                                        >Supplier Name</label
+                                    >
+                                    <input
+                                        type="text"
+                                        id="supplierName"
+                                        name="supplierName"
+                                        required
+                                    />
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contactPerson"
+                                        >Contact Person</label
+                                    >
+                                    <input
+                                        type="text"
+                                        id="contactPerson"
+                                        name="contactPerson"
+                                        required
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label for="phoneNumber"
+                                        >Phone Number</label
+                                    >
+                                    <input
+                                        type="tel"
+                                        id="phoneNumber"
+                                        name="phoneNumber"
+                                        required
+                                    />
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="emailAddress"
+                                        >Email Address</label
+                                    >
+                                    <input
+                                        type="email"
+                                        id="emailAddress"
+                                        name="emailAddress"
+                                        required
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label for="website">Website</label>
+                                    <input
+                                        type="url"
+                                        id="website"
+                                        name="website"
+                                    />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <textarea
+                                    id="address"
+                                    name="address"
+                                    rows="3"
+                                ></textarea>
+                            </div>
+                            <div class="form-actions">
+                                <button
+                                    type="button"
+                                    class="action-btn cancel-btn"
+                                    id="cancelSupplierBtn"
+                                >
+                                    Cancel
+                                </button>
+                                <button
+                                    type="submit"
+                                    class="action-btn save-btn"
+                                >
+                                    Save Supplier
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Your trusted pharmacy for all healthcare needs</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../products.html">Products</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>Email: info@pharmacare.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PharmaCare. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="js/suppliers.js"></script>
+    </body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sales Tracking - PharmaCare Employee Portal</title>
+        <link rel="stylesheet" href="../css/styles.css" />
+        <link rel="stylesheet" href="css/employee-styles.css" />
+        <link rel="stylesheet" href="css/sales-styles.css" />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <h1>PharmaCare</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="#" id="logoutBtn">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="dashboard">
+            <aside class="sidebar">
+                <ul class="sidebar-menu">
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="products.html">Product Management</a></li>
+                    <li><a href="suppliers.html">Supplier Management</a></li>
+                    <li><a href="inventory.html">Inventory Management</a></li>
+                    <li>
+                        <a href="sales.html" class="active">Sales Tracking</a>
+                    </li>
+                </ul>
+            </aside>
+
+            <div class="main-content">
+                <div class="page-header">
+                    <h2>Sales Tracking</h2>
+                    <p>Monitor sales transactions and revenue</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Today's Sales</h3>
+                        <div class="stat-value">$1,245</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Weekly Sales</h3>
+                        <div class="stat-value">$8,720</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Monthly Sales</h3>
+                        <div class="stat-value">$32,450</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Orders</h3>
+                        <div class="stat-value">124</div>
+                    </div>
+                </div>
+
+                <div class="toolbar">
+                    <div class="search-box">
+                        <input
+                            type="text"
+                            placeholder="Search orders..."
+                            id="searchOrders"
+                        />
+                    </div>
+                    <div class="date-filter">
+                        <label for="dateFrom">From:</label>
+                        <input type="date" id="dateFrom" />
+                        <label for="dateTo">To:</label>
+                        <input type="date" id="dateTo" />
+                        <button class="action-btn" id="applyDateFilter">
+                            Apply
+                        </button>
+                    </div>
+                </div>
+
+                <table class="data-table" id="salesTable">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Date</th>
+                            <th>Customer</th>
+                            <th>Items</th>
+                            <th>Total</th>
+                            <th>Payment Method</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ORD-12345</td>
+                            <td>2024-05-01 09:15</td>
+                            <td>John Smith</td>
+                            <td>3</td>
+                            <td>$78.50</td>
+                            <td>Credit Card</td>
+                            <td>
+                                <span class="status-success">Completed</span>
+                            </td>
+                            <td>
+                                <button class="action-btn view-btn">
+                                    View Details
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ORD-12346</td>
+                            <td>2024-05-01 10:30</td>
+                            <td>Sarah Johnson</td>
+                            <td>2</td>
+                            <td>$45.99</td>
+                            <td>Cash</td>
+                            <td>
+                                <span class="status-success">Completed</span>
+                            </td>
+                            <td>
+                                <button class="action-btn view-btn">
+                                    View Details
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ORD-12347</td>
+                            <td>2024-05-01 11:45</td>
+                            <td>Michael Brown</td>
+                            <td>5</td>
+                            <td>$124.75</td>
+                            <td>Credit Card</td>
+                            <td>
+                                <span class="status-success">Completed</span>
+                            </td>
+                            <td>
+                                <button class="action-btn view-btn">
+                                    View Details
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ORD-12348</td>
+                            <td>2024-05-01 13:20</td>
+                            <td>Emily Wilson</td>
+                            <td>1</td>
+                            <td>$25.99</td>
+                            <td>Cash</td>
+                            <td>
+                                <span class="status-success">Completed</span>
+                            </td>
+                            <td>
+                                <button class="action-btn view-btn">
+                                    View Details
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ORD-12349</td>
+                            <td>2024-05-01 14:10</td>
+                            <td>David Lee</td>
+                            <td>4</td>
+                            <td>$92.45</td>
+                            <td>Credit Card</td>
+                            <td>
+                                <span class="status-success">Completed</span>
+                            </td>
+                            <td>
+                                <button class="action-btn view-btn">
+                                    View Details
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Order Details Modal (hidden by default) -->
+                <div id="orderModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <h3>Order Details</h3>
+                        <div class="order-details">
+                            <div class="order-header">
+                                <div>
+                                    <p>
+                                        <strong>Order ID:</strong>
+                                        <span id="orderIdDetail"
+                                            >ORD-12345</span
+                                        >
+                                    </p>
+                                    <p>
+                                        <strong>Date:</strong>
+                                        <span id="orderDateDetail"
+                                            >2024-05-01 09:15</span
+                                        >
+                                    </p>
+                                </div>
+                                <div>
+                                    <p>
+                                        <strong>Customer:</strong>
+                                        <span id="customerNameDetail"
+                                            >John Smith</span
+                                        >
+                                    </p>
+                                    <p>
+                                        <strong>Payment Method:</strong>
+                                        <span id="paymentMethodDetail"
+                                            >Credit Card</span
+                                        >
+                                    </p>
+                                </div>
+                            </div>
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                        <th>Subtotal</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="orderItemsDetail">
+                                    <!-- Order items will be dynamically added here -->
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="3" class="text-right">
+                                            <strong>Total:</strong>
+                                        </td>
+                                        <td id="orderTotalDetail">$78.50</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Your trusted pharmacy for all healthcare needs</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../products.html">Products</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>Email: info@pharmacare.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PharmaCare. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="js/sales.js"></script>
+    </body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Browse Products - PharmaCare</title>
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="css/product-styles.css" />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <h1>PharmaCare</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html" class="active">Products</a></li>
+                    <li><a href="chatbot.html">Chat Support</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="checkout.html" class="cart-btn">Cart</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="products-page">
+            <section class="filters">
+                <h2>Filter Products</h2>
+                <div class="filter-group">
+                    <h3>Categories</h3>
+                    <label>
+                        <input type="checkbox" value="otc" checked />
+                        Over-the-Counter
+                    </label>
+                    <label>
+                        <input type="checkbox" value="prescription" checked />
+                        Prescription
+                    </label>
+                    <label>
+                        <input type="checkbox" value="wellness" checked />
+                        Wellness
+                    </label>
+                    <label>
+                        <input type="checkbox" value="healthcare" checked />
+                        Healthcare
+                    </label>
+                </div>
+                <div class="filter-group">
+                    <h3>Price Range</h3>
+                    <label>Under $15</label>
+                    <input
+                        type="range"
+                        min="0"
+                        max="1000"
+                        value="1000"
+                        class="price-range"
+                    />
+                    <span>$1000</span>
+                </div>
+            </section>
+
+            <section class="products-grid">
+                <!-- Product cards will be dynamically loaded via JavaScript -->
+            </section>
+        </main>
+
+        <div id="cartPopup" class="cart-popup">
+            <div class="cart-popup-content">
+                <span class="cart-popup-icon">✓</span>
+                <p class="cart-popup-message">Item added to cart!</p>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Your trusted pharmacy for all healthcare needs</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="chatbot.html">Chat Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>Email: info@pharmacare.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PharmaCare. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="js/products.js"></script>
+    </body>
+</html>

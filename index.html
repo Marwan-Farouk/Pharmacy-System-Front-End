@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Welcome to Our Pharmacy</title>
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="css/home-styles.css" />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <h1>PharmaCare</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="chatbot.html">Chat Support</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="checkout.html" class="cart-btn">Cart</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="hero-content">
+                    <h2>Your Health, Our Priority</h2>
+                    <p>
+                        Quality medicines and healthcare products delivered to
+                        your doorstep
+                    </p>
+                    <a href="products.html" class="cta-button"
+                        >Browse Products</a
+                    >
+                </div>
+            </section>
+
+            <section class="features">
+                <div class="feature-card">
+                    <h3>24/7 Support</h3>
+                    <p>Our team is always here to help</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Fast Delivery</h3>
+                    <p>Quick and reliable delivery service</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Secure Payments</h3>
+                    <p>Safe and encrypted transactions</p>
+                </div>
+            </section>
+
+            <section class="featured-products">
+                <h2>Featured Products</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img
+                            src="assets/images/pain-relief.jpg"
+                            alt="Pain Relief Tablets"
+                        />
+                        <h3>Pain Relief Tablets</h3>
+                        <p>Fast-acting pain relief medication</p>
+                        <span class="price">$12.99</span>
+                        <button
+                            style="margin-top: auto"
+                            onclick="addToCart('Pain Relief Tablets', 12.99)"
+                        >
+                            Add to Cart
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <img
+                            src="assets/images/vitamin-c.jpg"
+                            alt="Vitamin C Supplements"
+                        />
+                        <h3>Vitamin C Supplements</h3>
+                        <p>Immune system support</p>
+                        <span class="price">$15.99</span>
+                        <button
+                            style="margin-top: auto"
+                            onclick="addToCart('Vitamin C Supplements', 15.99)"
+                        >
+                            Add to Cart
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <img
+                            src="assets/images/first-aid.jpg"
+                            alt="First Aid Kit"
+                        />
+                        <h3>First Aid Kit</h3>
+                        <p>Complete emergency care kit</p>
+                        <span class="price">$29.99</span>
+                        <button
+                            style="margin-top: auto"
+                            onclick="addToCart('First Aid Kit', 29.99)"
+                        >
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Your trusted pharmacy for all healthcare needs</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="chatbot.html">Chat Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>Email: info@pharmacare.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PharmaCare. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>

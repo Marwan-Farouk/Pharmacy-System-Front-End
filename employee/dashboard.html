@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dashboard - PharmaCare Employee Portal</title>
+        <link rel="stylesheet" href="../css/styles.css" />
+        <link rel="stylesheet" href="css/employee-styles.css" />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <h1>PharmaCare</h1>
+                </div>
+                <ul class="nav-links">
+                    <li>
+                        <a href="dashboard.html" class="active">Dashboard</a>
+                    </li>
+                    <li><a href="#" id="logoutBtn">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="dashboard">
+            <aside class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>
+                        <a href="dashboard.html" class="active">Dashboard</a>
+                    </li>
+                    <li><a href="products.html">Product Management</a></li>
+                    <li><a href="suppliers.html">Supplier Management</a></li>
+                    <li><a href="inventory.html">Inventory Management</a></li>
+                    <li><a href="sales.html">Sales Tracking</a></li>
+                </ul>
+            </aside>
+
+            <div class="main-content">
+                <div class="page-header">
+                    <h2>Dashboard</h2>
+                    <p>Welcome to the PharmaCare Employee Portal</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Products</h3>
+                        <div class="stat-value">248</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Low Stock Items</h3>
+                        <div class="stat-value">12</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Today's Sales</h3>
+                        <div class="stat-value">$1,245</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Active Suppliers</h3>
+                        <div class="stat-value">18</div>
+                    </div>
+                </div>
+
+                <div class="recent-activity">
+                    <h3>Recent Activity</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Activity</th>
+                                <th>User</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2024-05-01 09:15</td>
+                                <td>Product Added</td>
+                                <td>Ahmed Adel</td>
+                                <td>Added "Allergy Relief Tablets"</td>
+                            </tr>
+                            <tr>
+                                <td>2024-05-01 10:30</td>
+                                <td>Inventory Updated</td>
+                                <td>Adel Sami</td>
+                                <td>Restocked "Pain Relief Tablets"</td>
+                            </tr>
+                            <tr>
+                                <td>2024-05-01 11:45</td>
+                                <td>Sale Completed</td>
+                                <td>System</td>
+                                <td>Order #12345 - $78.50</td>
+                            </tr>
+                            <tr>
+                                <td>2024-05-01 13:20</td>
+                                <td>Supplier Added</td>
+                                <td>Yassin Karem</td>
+                                <td>Added "MediSupply Inc."</td>
+                            </tr>
+                            <tr>
+                                <td>2024-05-01 14:10</td>
+                                <td>Product Updated</td>
+                                <td>Mostafa Ahmed</td>
+                                <td>
+                                    Updated price for "Vitamin C Supplements"
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Your trusted pharmacy for all healthcare needs</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../products.html">Products</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>Email: info@pharmacare.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PharmaCare. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="js/dashboard.js"></script>
+    </body>
+</html>

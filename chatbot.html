@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Chat Support - PharmaCare</title>
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="css/chatbot-styles.css" />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <h1>PharmaCare</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li>
+                        <a href="chatbot.html" class="active">Chat Support</a>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="checkout.html" class="cart-btn">Cart</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="chatbot-page">
+            <div class="chatbot-container">
+                <div class="chatbot-header">
+                    <h2>Chat with PharmaCare Support</h2>
+                </div>
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Messages will be dynamically added here -->
+                </div>
+                <div class="chat-input">
+                    <input
+                        type="text"
+                        id="userInput"
+                        placeholder="Type your message here..."
+                    />
+                    <button id="sendMessage">Send</button>
+                </div>
+            </div>
+
+            <div class="feature-box">
+                <h3>Quick Actions</h3>
+                <button class="quick-action" data-query="order status">
+                    Check Order Status
+                </button>
+                <button class="quick-action" data-query="delivery time">
+                    Delivery Times
+                </button>
+                <button class="quick-action" data-query="prescription">
+                    Prescription Requirements
+                </button>
+                <button class="quick-action" data-query="return policy">
+                    Return Policy
+                </button>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Your trusted pharmacy for all healthcare needs</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="chatbot.html">Chat Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>Email: info@pharmacare.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PharmaCare. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="js/chatbot.js"></script>
+    </body>
+</html>
